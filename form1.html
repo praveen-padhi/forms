@@ -2,11 +2,11 @@
 
 <head>
     <title>Demo form1</title>
-    <script
+    <!-- <script
     src='//in.fw-cdn.com/30525443/289243.js'
     chat='true'>
-    </script>
-
+    </script> -->
+    <script src='//eu.fw-cdn.com/10337760/241295.js' chat='true'></script>
 
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -194,18 +194,21 @@
             background-color: rgba(238, 90, 36, .1);
         }
     }
+    .stop-event {
+        border: 1px solid blue;
+        width: 800px;
+        padding: 50px;
+        height: 430px;
+        margin: auto;
+    }
 </style>
 <script type="text/javascript">
     function submitForm() {
         var aa = document.getElementById("form-section"),
             form = document.getElementById("webinar-form"),
-            email = form[0].value,
-            phoneno = form[1].value,
-            dob = form[2].value,
-            gender = form[3].value,
-            aboutus = form[4].value,
-            emailPermission = form[5].value,
-            termsCond = form[6].value;
+            fname = form[0].value,
+            lname = form[1].value,
+            email = form[2].value;
 
         aa.classList.toggle("toogle-success")
 
@@ -213,6 +216,15 @@
             aa.classList.toggle("toogle-success");
             form.reset();
         }, 3000);
+    }
+    
+    function button() {
+        event.stopPropagation();
+        console.log("button was clicked");
+    }
+
+    function div() {
+        console.log("div was clicked");
     }
 </script>
 
@@ -239,23 +251,27 @@
                 </svg>
                 <h2>Form submitted successfully</h2>
             </div>
-            <form class="fw-webniar-form" id="webinar-form" onsubmit="event.preventDefault(); return submitForm()"
-                method="post">
-                <h4 class="fw-mb30 fw-h4">Web Form</h4>
-                <div class="fw-form-group">
-                    <label>First Name<span class="require-symbol">*</span></label>
-                    <input type="text" class="fw-input" placeholder="First Name" required name="First Name" />
-                </div>
-                <div class="fw-form-group">
-                    <label>Last Name<span class="require-symbol">*</span></label>
-                    <input type="text" class="fw-input" placeholder="Last Name" required name="Last Name" />
-                </div>
-                <div class="fw-form-group">
-                    <label>Email<span class="require-symbol">*</span></label>
-                    <input type="email" class="fw-input" placeholder="Email" required name="Email" />
-                </div>
-                <button type="submit" class="fw-pri-btn">Save your seat</button>
-            </form>
+            <!-- <div class="stop-event" onclick="div()"> -->
+            <div class="stop-event">
+                <form class="fw-webniar-form" id="webinar-form" onsubmit="event.preventDefault(); return submitForm()"
+                    method="post">
+                    <h4 class="fw-mb30 fw-h4">Web Form</h4>
+                    <div class="fw-form-group">
+                        <label>First Name<span class="require-symbol">*</span></label>
+                        <input type="text" class="fw-input" placeholder="First Name" required name="First Name" />
+                    </div>
+                    <div class="fw-form-group">
+                        <label>Last Name<span class="require-symbol">*</span></label>
+                        <input type="text" class="fw-input" placeholder="Last Name" required name="Last Name" />
+                    </div>
+                    <div class="fw-form-group">
+                        <label>Email<span class="require-symbol">*</span></label>
+                        <input type="email" class="fw-input" placeholder="Email" required name="Email" />
+                    </div>
+                    <!-- <button type="submit" class="fw-pri-btn" onclick="button()">Save your seat</button> -->
+                    <button type="submit" class="fw-pri-btn" onclick="button()">Save your seat</button>
+                </form>
+            </div>
         </div>
     </section>
 </body>
