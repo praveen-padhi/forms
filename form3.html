@@ -194,9 +194,10 @@ chat='true'>
     }
     .stop-event {
         border: 1px solid blue;
-        width: 800px;
+        width: max-content;
         padding: 50px;
-        height: 430px;
+        display: flex;
+        gap: 1rem;
         margin: auto;
     }
 </style>
@@ -217,7 +218,7 @@ chat='true'>
     }
     
     function button() {
-        event.stopPropagation();
+        // event.stopPropagation();
         console.log("button was clicked");
     }
 
@@ -250,13 +251,16 @@ chat='true'>
                 <h2>Form submitted successfully</h2>
             </div>
             <div class="stop-event" onclick="div()">
-            <!-- <div class="stop-event"> -->
                 <form class="fw-webniar-form" id="webinar-form" onsubmit="event.preventDefault(); return submitForm()"
                     method="post">
                     <h4 class="fw-mb30 fw-h4">Web Form</h4>
                     <div class="fw-form-group">
                         <label>First Name<span class="require-symbol">*</span></label>
                         <input type="text" class="fw-input" placeholder="First Name" required name="First Name" />
+                    </div>
+                    <div class="fw-form-group">
+                        <label>Middle Name<span class="require-symbol">*</span></label>
+                        <input type="text" class="fw-input" placeholder="Middle Name" required name="Middle Name" />
                     </div>
                     <div class="fw-form-group">
                         <label>Last Name<span class="require-symbol">*</span></label>
@@ -267,7 +271,44 @@ chat='true'>
                         <input type="email" class="fw-input" placeholder="Email" required name="Email" />
                     </div>
                     <button type="submit" class="fw-pri-btn" onclick="button()">Save your seat</button>
-                    <!-- <button type="submit" class="fw-pri-btn">Save your seat</button> -->
+                </form>
+                <form class="fw-webniar-form" id="webinar-form1" onsubmit="event.preventDefault(); return submitForm()"
+                    method="post">
+                    <h4 class="fw-mb30 fw-h4">Web Form</h4>
+                    <div class="fw-form-group">
+                        <label>First Name<span class="require-symbol">*</span></label>
+                        <input type="text" class="fw-input" placeholder="First Name" required name="FN" />
+                    </div>
+                    <div class="fw-form-group">
+                        <label>Last Name<span class="require-symbol">*</span></label>
+                        <input type="text" class="fw-input" placeholder="Last Name" required name="LN" />
+                    </div>
+                    <div class="fw-form-group">
+                        <label>Email<span class="require-symbol">*</span></label>
+                        <input type="email" class="fw-input" placeholder="Email" required name="E" />
+                    </div>
+                    <div class="fw-form-group">
+                        <label>Mobile Number<span class="require-symbol">*</span></label>
+                        <input type="number" class="fw-input" placeholder="Mobile Number" required name="MN" />
+                    </div>
+                    <button type="submit" class="fw-pri-btn" onclick="button()">Save your seat</button>
+                </form>
+                <form class="fw-webniar-form" id="webinar-form2" onsubmit="event.preventDefault(); return submitForm()"
+                    method="post">
+                    <h4 class="fw-mb30 fw-h4">Web Form</h4>
+                    <div class="fw-form-group">
+                        <label>First Name<span class="require-symbol">*</span></label>
+                        <input type="text" class="fw-input" placeholder="First Name" required name="FirstN" />
+                    </div>
+                    <div class="fw-form-group">
+                        <label>Last Name<span class="require-symbol">*</span></label>
+                        <input type="text" class="fw-input" placeholder="Last Name" required name="LastN" />
+                    </div>
+                    <div class="fw-form-group">
+                        <label>Email<span class="require-symbol">*</span></label>
+                        <input type="email" class="fw-input" placeholder="Email" required name="EmailDetails" />
+                    </div>
+                    <button type="submit" class="fw-pri-btn" onclick="button()">Save your seat</button>
                 </form>
             </div>
         </div>
